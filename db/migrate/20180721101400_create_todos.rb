@@ -1,9 +1,9 @@
 class CreateTodos < ActiveRecord::Migration[5.2]
   def change
     create_table :todos do |t|
-      t.text :text
+      t.string :text
       t.boolean :isCompleted, default: false
-      t.references :project, polymorphic: true
+      t.references :project, foreign_key: true
 
       t.timestamps
     end
